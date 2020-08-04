@@ -58,3 +58,20 @@ where departments.dept_no = dept_emp.dept_no AND dept_emp.emp_no = employees.emp
 select first_name, last_name, sex
 from employees
 where first_name = 'Hercules' and last_name LIKE 'B%';
+
+--Data Analysis #6
+select dept_emp.emp_no, employees.last_name, employees.first_name, departments.dept_name
+from dept_emp, employees, departments
+where departments.dept_name = 'Sales' AND dept_emp.emp_no = employees.emp_no;
+
+--Data Analysis #7
+select dept_emp.emp_no, employees.last_name, employees.first_name, departments.dept_name
+from dept_emp, employees, departments
+where (departments.dept_name = 'Sales' AND dept_emp.emp_no = employees.emp_no)
+OR (departments.dept_name='Development' AND dept_emp.emp_no = employees.emp_no);
+
+--Data Analysis #8
+select last_name, count(*)
+From employees
+group by last_name 
+order by count desc;
