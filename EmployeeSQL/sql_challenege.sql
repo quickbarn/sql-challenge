@@ -34,4 +34,19 @@ title_id nchar(5),
 title varchar(30)
 );
 
---stopping point
+--Data Analysis #1
+select employees.emp_no, employees.last_name, employees.first_name, employees.sex, salaries.salary 
+from employees, salaries
+WHERE employees.emp_no = salaries.emp_no; 
+
+--Data Analysis #2
+select first_name, last_name, hire_date
+from employees
+where hire_date Between '1985-12-31' and '1987-01-01';
+
+--Data Analysis #3
+select dept_manager.emp_no,employees.last_name, employees.first_name, departments.dept_name
+From dept_manager, employees, departments
+where dept_manager.emp_no = employees.emp_no AND dept_manager.dept_no=departments.dept_no;
+
+--Data Analysis #4
