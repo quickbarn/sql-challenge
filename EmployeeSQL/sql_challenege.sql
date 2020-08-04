@@ -75,3 +75,7 @@ select last_name, count(*)
 From employees
 group by last_name 
 order by count desc;
+
+--ID number 499942
+select * from employees
+where emp_no ='499942';
