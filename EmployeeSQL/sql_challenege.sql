@@ -50,3 +50,11 @@ From dept_manager, employees, departments
 where dept_manager.emp_no = employees.emp_no AND dept_manager.dept_no=departments.dept_no;
 
 --Data Analysis #4
+select dept_emp.emp_no, employees.last_name, employees.first_name, departments.dept_name
+from dept_emp, employees, departments
+where departments.dept_no = dept_emp.dept_no AND dept_emp.emp_no = employees.emp_no;
+
+--Data Analysis #5
+select first_name, last_name, sex
+from employees
+where first_name = 'Hercules' and last_name LIKE 'B%';
